@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/firstfragment">
+
+    <fragment
+        android:id="@+id/firstfragment"
+        android:name="com.example.roominkotlin.fragment.list.Firsttfragment"
+        android:label="fragment_firstfragment"
+        tools:layout="@layout/fragment_firstfragment" >
+        <action
+            android:id="@+id/action_firstfragment_to_addfragment"
+            app:destination="@id/addfragment" />
+        <action
+            android:id="@+id/action_firstfragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addfragment"
+        android:name="com.example.roominkotlin.fragment.add.Addfragment"
+        android:label="fragment_addfragment"
+        tools:layout="@layout/fragment_addfragment" >
+        <action
+            android:id="@+id/action_addfragment_to_firstfragment"
+            app:destination="@id/firstfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.roominkotlin.fragment.update.UpdateFragment"
+        android:label="update"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment_to_firstfragment"
+            app:destination="@id/firstfragment" />
+        <argument
+            android:name="currentuser"
+            app:argType="com.example.roominkotlin.model.User" />
+    </fragment>
+</navigation>
